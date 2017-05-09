@@ -1,0 +1,133 @@
+html,body{
+    background:#6a6666;
+    font-family:tahoma;
+    font-size:62.5%;
+    height:100%;
+    margin:0;
+}
+.main{
+    height:200px;
+    margin:200px auto;
+    perspective:500px;
+    width:200px;
+}
+.cube{
+    position:relative;
+    width:300px;
+    height:300px;
+    animation:bougeTonCube 5s linear infinite;
+    transform-style: preserve-3d;
+}
+.face{
+    border:solid 2px black;
+    font-size:7em;  
+    height:200px;   
+    line-height:200px;
+    opacity:0.8;
+    position:absolute;
+    text-align:center;
+    width:200px;
+}
+.face1{
+    background-color:black;
+    color:white;
+}
+.face2{
+    background-color:grey;
+    transform:translateZ(-100px) translateX(100px) rotateY(90deg);
+}
+.face3{
+    background-color:violet;
+    transform:translateZ(-200px) rotateY(-180deg);
+}
+.face4{
+    background-color:red;
+    transform-style: preserve-3d;
+    transform:translateZ(-100px) translateX(-100px) rotateY(-90deg);
+}
+.face5{
+    background-color:blue;
+    transform:translateZ(-100px) translateY(-100px) rotateX(90deg);
+}
+.face6{
+    background-color:green;
+    transform:translateZ(-100px) translateY(100px) rotateX(-90deg);
+}
+.face4::after{
+    content:"";
+    background-color:aqua;
+    border:solid 2px purple;
+    height:200px;   
+    position:absolute;
+    width:200px;
+    left:0;
+    animation:ouvreCouvercle 5s linear infinite;
+    transform:translateZ(2px) translateY(0px) rotateX(0deg);  
+}
+.mini-cube{
+    position:relative;
+    width:300px;
+    height:300px;
+    animation:sortLeCube 5s linear infinite;
+    transform-style:preserve-3d;
+    transform:translateZ(-75px) translateY(75px) translateX(75px);
+}
+.mini-face {
+    height:50px;
+    width:50px;
+    opacity:1;
+    background-color:yellow;
+    position:absolute;
+    border:solid 2px black;
+}
+.mini-face1{
+    color:white;
+}
+.mini-face2{
+    transform:translateZ(-25px) translateX(25px) rotateY(90deg);
+}
+.mini-face3{
+    transform:translateZ(-50px) rotateY(-180deg);
+}
+.mini-face4{
+    transform:translateZ(-25px) translateX(-25px) rotateY(-90deg);
+}
+.mini-face5{
+    transform:translateZ(-25px) translateY(-25px) rotateX(90deg);
+}
+.mini-face6{
+    transform:translateZ(-25px) translateY(25px) rotateX(-90deg);
+}
+@keyframes bougeTonCube{
+    20% {transform-origin: 50% 50%; transform: rotateZ(0deg)
+        rotateY(-90deg) rotateX(0deg)}
+    40% {transform-origin: 50% 50%; transform: rotateZ(0deg)
+        rotateY(-180deg) rotateX(0deg)}
+    60% {transform-origin: 50% 50%; transform: rotateZ(0deg)
+        rotateY(-270deg) rotateX(0deg)}
+    80% {transtransform-origin: 50% 50%; transform: rotateZ(0deg)
+        rotateY(-360deg) rotateX(-90deg)}
+    90% {transtransform-origin: 50% 50%; transform: rotateZ(0deg)
+        rotateY(-360deg) rotateX(-270deg)}
+    100% {transtransform-origin: 50% 50%; transform: rotateZ(0deg)
+        rotateY(-360deg) rotateX(-360deg)};
+}
+@keyframes ouvreCouvercle{
+    20% {transform-origin: 0% 0%; transform: translateZ(2px)  rotateZ(0deg)         rotateY(0deg) rotateX(90deg)}
+    40% {transform-origin: 0% 0%; transform: translateZ(2px)  rotateZ(0deg)         rotateY(0deg) rotateX(90deg)}
+    60% {transform-origin: 0% 0%; transform: translateZ(2px)  rotateZ(0deg)         rotateY(0deg) rotateX(90deg)}
+    80% {transform-origin: 0% 0%; transform: translateZ(2px)  rotateZ(0deg)         rotateY(0deg) rotateX(0deg)}
+    100% {transform-origin: 0% 0%; transform: translateZ(2px)  rotateZ(0deg)         rotateY(0deg) rotateX(0deg)};
+}
+@keyframes sortLeCube{
+    10% {transform: translateZ(-75px) translateY(75px) translateX(75px)}
+    15% {transform: translateZ(-75px) translateY(75px) translateX(75px)}
+    20% {transform: translateZ(-75px) translateY(75px) translateX(75px)}
+    25% {transform: translateZ(-75px) translateY(75px) translateX(75px)}
+    30% {transform: translateZ(-75px) translateY(75px) translateX(75px)}
+    35% {transform: translateZ(-75px) translateY(75px) translateX(75px)}
+    40% {transform: translateZ(-75px) translateY(75px) translateX(-175px)}
+    45% {transform: translateZ(-75px) translateY(75px) translateX(-175px)}
+    80% {transform: translateZ(-75px) translateY(75px) translateX(-175px)}
+    100% {transform: translateZ(-75px) translateY(75px) translateX(-175px)};
+}
